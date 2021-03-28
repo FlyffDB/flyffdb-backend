@@ -22,12 +22,10 @@
     "@babel/preset-env": "^7.13.10",
     "@flyffdb/flyff-data": "^1.0.0",
     "apollo-server": "^2.21.1",
-    "graphql": "^15.5.0",
-    "lowdb": "^1.0.0"
+    "graphql": "^15.5.0"
   },
   "devDependencies": {
     "@babel/core": "^7.13.10",
-    "@babel/node": "^7.13.10",
-    "csv-parse": "^4.15.3"
+    "@babel/node": "^7.13.10"
   }
 }
