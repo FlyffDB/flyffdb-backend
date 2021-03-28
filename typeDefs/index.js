@@ -1,103 +1,41 @@
 const { gql } = require('apollo-server');
 
 const typeDefs = gql`
-  enum Job {
-    ACROBAT
-    ASSIST
-    BILLPOSTER
-    BLADE
-    ELEMENTOR
-    JESTER
-    KNIGHT
-    MAGE
-    MERCENARY
-    PSYKEEPER
-    RANGER
-    RINGMASTER
-    VAGRANT
+  type LocalilzationText {
+    en: String,
+    fr: String,
+    kr: String
   }
 
-  enum Rarity {
-    GREEN
-    BLUE
+  type WorldLocation {
+    world: Int
+    x: String
+    y: String
+    z: String
   }
 
-  enum Sex {
-    MALE
-    FEMALE
-    SEXLESS
-  }
-
-  enum Stat {
-    STR
-    INT 
-    DEX
-    STA
-    DEF 
-    HP
-    ATK
-    MP
-    CRIT
-    ADOCH
-    HIT
-    PARRY
-    RANGE
-    REFLECT
-    BLOCK
-    SHORT_BLOCK
-    DISTANCE_ATK
-  }
-
-  type StatValues {
-    name: Stat
-    value: String
-  }
-
-  type SetEffects {
-    one: [StatValues]
-    two: [StatValues]
-    three: [StatValues]
-    four: [StatValues]
-  }
-
-  type Equipment {
-    name: String
+  type Class {
+    id: ID
+    name: LocalilzationText
+    type: String
+    parent: Class
     icon: String
-    sex: Sex
-    job: Job
-    minDefense: Int
-    maxDefense: Int
-    stats: [StatValues]
-    level: Int
-    npcPrice: Int
-    rarity: Rarity
   }
 
-  type EquipmentSet {
-    name: String
-    sex: Sex
-    pieces: [Equipment]
-    effects: SetEffects
-    rarity: Rarity
-    job: Job
-  }
-
-  type Weapon {
-    name: String
-    icon: String
-    job: Job
-    minDamage: Int
-    maxDamage: Int
-    stats: [StatValues]
-    level: Int
-    npcPrice: Int
-    rarity: Rarity
+  type NPC {
+    id: ID
+    name: LocalilzationText
+    place: String
+    menus: [String]
+    locations: [WorldLocation]
+    image: String
   }
 
   type Query {
-    equipment: [Equipment]
-    weapons: [Weapon]
-    equipmentSet: [EquipmentSet]
+    classes: [Class]
+    class(id: ID): Class
+    npc(id: ID): NPC
+    npcs: [NPC]
   }
 `;
 

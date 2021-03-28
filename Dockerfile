@@ -1,0 +1,16 @@
+FROM node:12-alpine
+
+# Github packages token
+ARG FLYFFDB_NPM_AUTH
+ENV FLYFFDB_NPM_AUTH=$FLYFFDB_NPM_AUTH
+ENV NODE_ENV=PRODUCTION
+
+WORKDIR /
+
+COPY . .
+
+RUN npm install
+
+EXPOSE 4000
+
+CMD [ "npm", "start" ]
