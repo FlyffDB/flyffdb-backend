@@ -1,0 +1,31 @@
+{
+  "name": "flyffdb-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "start": "babel-node server",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/FlyffDB/flyffdb-backend.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/FlyffDB/flyffdb-backend/issues"
+  },
+  "homepage": "https://github.com/FlyffDB/flyffdb-backend#readme",
+  "dependencies": {
+    "@babel/preset-env": "^7.13.10",
+    "@flyffdb/flyff-data": "^1.0.0",
+    "apollo-server": "^2.21.1",
+    "graphql": "^15.5.0"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.13.10",
+    "@babel/node": "^7.13.10"
+  }
+}
